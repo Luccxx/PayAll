@@ -1,11 +1,11 @@
-let VarDateNotSave = false;
-
-function DateSave(){
-    VarDateNotSave = true;
+function InitAll(){
+    SubmitData();
+    PostData();
 }
 
-function DateNotSave(){
-    VarDateNotSave = false;
+let VarDateNotSave = false;
+function DateSave(){
+    VarDateNotSave = true;
 }
 
 function DateNotSave(VarDateNotSave){
@@ -20,8 +20,6 @@ function DateNotSave(VarDateNotSave){
     }
     
 }
-
-
 function FullDate(){
     const data = new Date();
     const day = data.getUTCDate();
@@ -38,67 +36,74 @@ function FullDate(){
 
 const dataToSubmit = [];
 
-document.getElementById("paymentForm").addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    const novoPagamento = {
-        "conta_id": document.getElementById('select').value,
-        "situacao": document.getElementById('situacao').checked === true ? '1' : '0',
-        "valor": document.getElementById('valor').value,
-        "vencimento": document.getElementById('vencimento').value,
-        "data_pagamento": FullDate()//document.getElementById('data_pagamento').value
-    };
-
-    dataToSubmit.push(novoPagamento);
-
-    const tbody = document.getElementById("tbody-container");
-
-    const dataRow = document.createElement("tr");
-    for (const key in novoPagamento) {
-        const dataCell = document.createElement("td");
-        dataCell.textContent = novoPagamento[key];
-        dataRow.appendChild(dataCell);
-    }
-
-    tbody.appendChild(dataRow);
-
-    this.reset();
-    DateSave();
-    DateNotSave(VarDateNotSave);
-});
-
-document.getElementById("enviarDados").addEventListener("click", function (event) {
-    event.preventDefault();
-
-    console.log(dataToSubmit);
+function SubmitData(){
+    document.getElementById("paymentForm").addEventListener("submit", function (event) {
+        event.preventDefault();
     
+        const novoPagamento = {
+            "conta_id": document.getElementById('select').value,
+            "situacao": document.getElementById('situacao').checked === true ? '1' : '0',
+            "valor": document.getElementById('valor').value,
+            "vencimento": document.getElementById('vencimento').value,
+            "data_pagamento": FullDate()//document.getElementById('data_pagamento').value
+        };
+    
+        dataToSubmit.push(novoPagamento);
+    
+        const tbody = document.getElementById("tbody-container");
+    
+        const dataRow = document.createElement("tr");
+        for (const key in novoPagamento) {
+            const dataCell = document.createElement("td");
+            dataCell.textContent = novoPagamento[key];
+            dataRow.appendChild(dataCell);
+        }
+    
+        tbody.appendChild(dataRow);
+    
+        this.reset();
+        DateSave();
+        DateNotSave(VarDateNotSave);
+    });
+}
 
-    if (dataToSubmit.length > 0) {
+function PostData(){
+    document.getElementById("enviarDados").addEventListener("click", function (event) {
+        event.preventDefault();
+    
+        console.log(dataToSubmit);
         
-        fetch("http://localhost/api.php", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(dataToSubmit),
-        })
-        .then((response) => {
-            if (!response.ok) {
-                throw new Error("Erro ao enviar os dados");
-            }
-            //window.location.href = "../../index.html";
-            console.log(response);
-            DateNotSave();
-            return response.json();
-        })    
-        .then((data) => {
-            console.log(data);
-        })
-        .catch((error) => {
-            console.error("Erro:", error);
-        });
-    } else {
-        alert("Nenhuma conta para enviar. Adicione pelo menos uma conta.")
-        console.warn("Nenhum dado para enviar.");
-    }
-});
+    
+        if (dataToSubmit.length > 0) {
+            
+            fetch("http://localhost/api.php", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(dataToSubmit),
+            })
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error("Erro ao enviar os dados");
+                }
+                //window.location.href = "../../index.html";
+                console.log(response);
+                DateNotSave();
+                return response.json();
+            })    
+            .then((data) => {
+                console.log(data);
+            })
+            .catch((error) => {
+                console.error("Erro:", error);
+            });
+        } else {
+            alert("Nenhuma conta para enviar. Adicione pelo menos uma conta.")
+            console.warn("Nenhum dado para enviar.");
+        }
+    });
+}
+
+InitAll();
+
