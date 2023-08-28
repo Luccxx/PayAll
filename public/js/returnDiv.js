@@ -40,12 +40,12 @@ export async function returnDivs(data){
     await pagamentos.forEach(itens => {
         
 
-        function createTd(id, nome, valor, venc, situ, data){
+        function createTd(nome, valor, venc, situ, data){
             
             const tbody = document.querySelector("#tbody-container");
             const tr = document.createElement('tr');
 
-            const args = [id, nome, valor, venc, situ, data];
+            const args = [nome, valor, venc, situ, data];
 
             for (const arg of args) {
                 const td = document.createElement('td');
@@ -74,7 +74,6 @@ export async function returnDivs(data){
         }
 
         const list = {
-            ID: itens.ID,
             Nome: itens.Nome,
             Valor: itens.valor,
             Vencimento: Data(itens.vencimento),
@@ -83,7 +82,7 @@ export async function returnDivs(data){
             Total: itens.total
         }
 
-        createTd(itens.ID, itens.Nome, "R$ "+itens.valor, list.Vencimento, list.Situacao, list.Data)
+        createTd(itens.Nome, "R$ "+itens.valor, list.Vencimento, list.Situacao, list.Data)
         //Total(itens.total)
     });
 }
