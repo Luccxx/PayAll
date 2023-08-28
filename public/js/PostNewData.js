@@ -1,9 +1,11 @@
+const dataToSubmit = [];
+let VarDateNotSave = false;
+
 function InitAll(){
     SubmitData();
     PostData();
 }
 
-let VarDateNotSave = false;
 function DateSave(){
     VarDateNotSave = true;
 }
@@ -20,24 +22,21 @@ function DateNotSave(VarDateNotSave){
     }
     
 }
+
 function FullDate(){
     const data = new Date();
     const day = data.getUTCDate();
-    console.log(`Dia -> ${day}`);
     const month = data.getUTCMonth() + 1;
     const year = data.getUTCFullYear();
-    console.log(`Ano -> ${year}`)
-    console.log(`Mês -> ${month}`);
 
     const Fulldate = (`${year}-${month}-${day}`);
 
     return Fulldate;
 }
 
-const dataToSubmit = [];
-
 function SubmitData(){
-    document.getElementById("paymentForm").addEventListener("submit", function (event) {
+    const PayForm = document.querySelector('#paymentForm');
+    PayForm.addEventListener("submit", function (event) {
         event.preventDefault();
     
         const novoPagamento = {
@@ -68,12 +67,12 @@ function SubmitData(){
 }
 
 function PostData(){
-    document.getElementById("enviarDados").addEventListener("click", function (event) {
+    const ButtonData = document.querySelector('#enviarDados');
+    ButtonData.addEventListener("click", function (event) {
         event.preventDefault();
     
         console.log(dataToSubmit);
-        
-    
+
         if (dataToSubmit.length > 0) {
             
             fetch("http://localhost/api.php", {
@@ -88,6 +87,7 @@ function PostData(){
                     throw new Error("Erro ao enviar os dados");
                 }
                 //window.location.href = "../../index.html";
+                alert('Despesa Criada Com Sucesso!');
                 console.log(response);
                 DateNotSave();
                 return response.json();
@@ -99,7 +99,7 @@ function PostData(){
                 console.error("Erro:", error);
             });
         } else {
-            alert("Nenhuma conta para enviar. Adicione pelo menos uma conta.")
+            alert("Nenhuma conta para enviar. Adicione pelo menos uma.")
             console.warn("Nenhum dado para enviar.");
         }
     });
