@@ -1,0 +1,68 @@
+.form-select form-select-sm{
+    width: 1rem;
+}
+
+.main-container{
+    margin-top: 50px;
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.main-container-left{
+    position: absolute;
+    padding-left: 5%;
+    top: 12rem;
+    left: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    float: left;
+}
+
+.main-container-right{
+    position: absolute;
+    padding-right: 5%;
+    top: 12rem;
+    right: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    float: right;
+}
+
+.div-footer{
+    padding-top: 50%;
+}
+
+#h2-paymentForm{
+    margin-top: -2rem
+}
+
+#paymentForm{
+    border: solid 1px black;
+    padding: 1rem 5rem 1rem 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.txt-vencimento{
+    text-align: center;
+}
+
+.button-submit-enviar{
+    margin-top: 10px;
+}
+
+.container-paymentForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
