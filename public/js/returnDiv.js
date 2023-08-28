@@ -11,7 +11,7 @@ export async function returnDivs(data){
         a.innerHTML = "aqui";
         a.href = "../src/pages/nova-conta.html"; // Use a.href = "URL" para definir o atributo href
         tbody.innerHTML = `
-        <label class="no_data">Sem dados no momento. Clique ${a.outerHTML} para inserir uma conta nova</label>`;
+        <label class="no_data">Sem despesas no momento. Clique ${a.outerHTML} para inserir uma nova despesa.</label>`;
     }
     
 
