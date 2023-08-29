@@ -1,6 +1,18 @@
+function formatURL(url) {
+    return url.startsWith('/') ? url : '/' + url;
+}
+
+const UrlIndex = formatURL(`index.html`);
+const UrlNovo = formatURL(`./src/pages/nova-conta.html`);
+// Array de links e seus textos correspondentes
+const links = [
+    { url: formatURL('index.html') },
+    { url: formatURL('./src/pages/nova-conta.html') }, // Link ajustado
+    { url: formatURL('.src/pages/contato.html') }
+];
+
 document.write(`
 <style>
-
 *{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin: 0;
@@ -47,7 +59,7 @@ document.write(`
     </div>
     <div class="navbar-container">
     <div class="navbar-box">
-        <span><a href="./src/pages/nova-conta.html" target="_blank">Novo</a></span>
+        <span><a href="${UrlNovo}" id="ahref">Novo</a></span>
         <span><a href="../../index.html">Histórico</a></span>
         <span><a href="">Configurações</a></span>
     </div>
