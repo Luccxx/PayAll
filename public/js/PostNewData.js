@@ -1,3 +1,6 @@
+import { UpdateDataReturn } from "./UpdateData.js";
+
+let buttonUpdateValue  = 0;
 const dataToSubmit = [];
 let VarDateNotSave = false;
 
@@ -36,6 +39,7 @@ function FullDate(){
 
 function SubmitData(){
     const PayForm = document.querySelector('#paymentForm');
+    
     PayForm.addEventListener("submit", function (event) {
         event.preventDefault();
     
@@ -46,12 +50,15 @@ function SubmitData(){
             "vencimento": document.getElementById('vencimento').value,
             "data_pagamento": FullDate()//document.getElementById('data_pagamento').value
         };
-    
+        
         dataToSubmit.push(novoPagamento);
-    
+        
         const tbody = document.getElementById("tbody-container");
+        let ValueButton = buttonUpdateValue++;
+        
 
-        const buttons = document.createElement('button');
+        const buttonUpdate = document.createElement('button');
+        const buttonDelete = document.createElement('button');
         const dataRow = document.createElement("tr");
 
         for (const key in novoPagamento) {
@@ -59,13 +66,21 @@ function SubmitData(){
             dataCell.textContent = novoPagamento[key];
             dataRow.appendChild(dataCell);
         }
+        buttonUpdate.textContent = "Update";
+        buttonUpdate.setAttribute('id', 'buttonUpdate');
+        buttonUpdate.setAttribute('value', ValueButton);
+        
+        buttonDelete.textContent = "Delete";
+        buttonDelete.setAttribute('id', 'buttonDelete');
+        buttonDelete.setAttribute('value', ValueButton)
+        
+        dataRow.appendChild(buttonUpdate);
+        dataRow.appendChild(buttonDelete);
 
-        buttons.textContent = "Update";
-        buttons.setAttribute('value', novoPagamento.conta_id);
-        dataRow.appendChild(buttons);
-    
         tbody.appendChild(dataRow);
-    
+
+        UpdateDataReturn(buttonUpdate, dataToSubmit);
+
         this.reset();
         DateSave();
         DateNotSave(VarDateNotSave);
