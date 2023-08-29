@@ -50,13 +50,19 @@ function SubmitData(){
         dataToSubmit.push(novoPagamento);
     
         const tbody = document.getElementById("tbody-container");
-    
+
+        const buttons = document.createElement('button');
         const dataRow = document.createElement("tr");
+
         for (const key in novoPagamento) {
             const dataCell = document.createElement("td");
             dataCell.textContent = novoPagamento[key];
             dataRow.appendChild(dataCell);
         }
+
+        buttons.textContent = "Update";
+        buttons.setAttribute('value', novoPagamento.conta_id);
+        dataRow.appendChild(buttons);
     
         tbody.appendChild(dataRow);
     
