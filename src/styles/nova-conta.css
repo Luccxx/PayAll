@@ -106,6 +106,30 @@
     margin-top: 10px;
 }
 
+#buttonUpdate{
+    background: none;
+    border: none;
+    padding: 10px;
+    background-color: #2629cf;
+    border-radius: 20px;
+    color: white;
+}
+
+#buttonUpdate{
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-right: 1rem;
+}
+
+#buttonDelete{
+    background: none;
+    border: none;
+    padding: 10px;
+    background-color: #a52222;
+    border-radius: 20px;
+    color: white;
+}
+
 
 .container-paymentForm{
     display: flex;
