@@ -76,6 +76,7 @@ function SubmitData(){
         
         buttonDelete.textContent = "Delete";
         buttonDelete.setAttribute('id', 'buttonDelete');
+        buttonDelete.classList.add('buttonDelete');
         buttonDelete.setAttribute('value', ValueButton)
         
         dataRow.appendChild(buttonUpdate);
@@ -83,7 +84,7 @@ function SubmitData(){
 
         tbody.appendChild(dataRow);
 
-        DeleteDataReturn(buttonUpdate, dataToSubmit, tbody);
+        DeleteDataReturn(buttonDelete, dataToSubmit, tbody);
         
         this.reset();
         DateSave();
