@@ -1,4 +1,4 @@
-import { UpdateDataReturn } from "./UpdateData.js";
+import { UpdateDataReturn } from "./DeleteData.js";
 
 let buttonUpdateValue  = 0;
 const dataToSubmit = [];
@@ -60,13 +60,17 @@ function SubmitData(){
         const buttonUpdate = document.createElement('button');
         const buttonDelete = document.createElement('button');
         const dataRow = document.createElement("tr");
-
+        
         for (const key in novoPagamento) {
             const dataCell = document.createElement("td");
             dataCell.textContent = novoPagamento[key];
             dataRow.appendChild(dataCell);
+          
         }
+
+        
         buttonUpdate.textContent = "Update";
+        buttonUpdate.classList.add('buttonUpdate');
         buttonUpdate.setAttribute('id', 'buttonUpdate');
         buttonUpdate.setAttribute('value', ValueButton);
         
@@ -79,8 +83,8 @@ function SubmitData(){
 
         tbody.appendChild(dataRow);
 
-        UpdateDataReturn(buttonUpdate, dataToSubmit);
-
+        UpdateDataReturn(buttonUpdate, dataToSubmit, tbody);
+        
         this.reset();
         DateSave();
         DateNotSave(VarDateNotSave);
