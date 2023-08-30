@@ -1,4 +1,4 @@
-export function UpdateDataReturn(button, data, table){
+export function DeleteDataReturn(button, data, table){
     button.addEventListener("click", function(event) {
         console.log(data);
         console.log(button.value);
