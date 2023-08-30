@@ -1,4 +1,4 @@
-import { DeleteDataReturn } from "./DeleteData.js";
+import DeleteDataReturn from "./DeleteData.js";
 
 let buttonUpdateValue  = 0;
 const dataToSubmit = [];
@@ -26,6 +26,7 @@ function DateNotSave(VarDateNotSave){
     
 }
 
+
 function FullDate(){
     const data = new Date();
     const day = data.getUTCDate();
@@ -40,6 +41,7 @@ function FullDate(){
 function SubmitData(){
     const PayForm = document.querySelector('#paymentForm');
     
+    
     PayForm.addEventListener("submit", function (event) {
         event.preventDefault();
     
@@ -51,7 +53,18 @@ function SubmitData(){
             "data_pagamento": FullDate()//document.getElementById('data_pagamento').value
         };
         
+        let number = 0;
         dataToSubmit.push(novoPagamento);
+        
+        /*
+        let number = 0;
+        a.forEach(element => {
+            let a = parseInt(element);
+            number += a;
+        });
+        label.innerHTML += number;
+        div.appendChild(label)
+        */
         
         const tbody = document.getElementById("tbody-container");
         let ValueButton = buttonUpdateValue++;
