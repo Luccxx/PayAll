@@ -16,7 +16,7 @@
                 <div class="container-paymentForm">
                     <div class="input-group mb-3">
                         <label class="input-group-text" for="inputGroupSelect01">Despesa</label>
-                        <select class="form-select" id="select">
+                        <select class="form-select" id="select" required>
                         </select>
                       </div>
                     <div class="form-check form-check-reverse mb-3">
@@ -27,11 +27,11 @@
                     </div>
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="inputGroup-sizing-default">Valor</span>
-                        <input type="number" min="0" step="any" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="valor">
+                        <input type="number" min="0" step="any" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="valor" required>
                       </div>
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="inputGroup-sizing-default">Vencimento</span>
-                        <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="vencimento">
+                        <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="vencimento" required>
                     </div>
                     <div class="button-submit-enviar">
                         <input class="" type="submit" value="Adicionar a tabela">
