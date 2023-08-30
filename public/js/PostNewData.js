@@ -1,4 +1,4 @@
-import { UpdateDataReturn } from "./DeleteData.js";
+import { DeleteDataReturn } from "./DeleteData.js";
 
 let buttonUpdateValue  = 0;
 const dataToSubmit = [];
@@ -83,7 +83,7 @@ function SubmitData(){
 
         tbody.appendChild(dataRow);
 
-        UpdateDataReturn(buttonUpdate, dataToSubmit, tbody);
+        DeleteDataReturn(buttonUpdate, dataToSubmit, tbody);
         
         this.reset();
         DateSave();
