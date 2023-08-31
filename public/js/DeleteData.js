@@ -2,6 +2,12 @@ export default function DeleteDataReturn(button, data, table){
     const divtotal = document.querySelector('#totalValue');
     
     button.addEventListener("click", function(event) {
+        const buttonsToUpdate = document.querySelectorAll(".buttonDelete");
+        buttonsToUpdate.forEach((btn, index) => {
+            console.log(btn)
+            console.log(index);
+            btn.value = index;
+        });
         console.log(data);
         console.log(button.value);
         const removedItem = data.splice(button.value, 1); // Remove o item
@@ -21,10 +27,7 @@ export default function DeleteDataReturn(button, data, table){
             cell.remove();
 
             // Atualiza os valores dos botões após a remoção
-            const buttonsToUpdate = document.querySelectorAll(".buttonDelete");
-            buttonsToUpdate.forEach((btn, index) => {
-                btn.value = index;
-            });
+            
         }
     });
 

@@ -1,6 +1,5 @@
 import DeleteDataReturn from "./DeleteData.js";
 
-let buttonUpdateValue  = 0;
 const dataToSubmit = [];
 let VarDateNotSave = false;
 
@@ -67,7 +66,6 @@ function SubmitData(){
         */
         
         const tbody = document.getElementById("tbody-container");
-        let ValueButton = buttonUpdateValue++;
         
 
         const buttonUpdate = document.createElement('button');
@@ -85,12 +83,10 @@ function SubmitData(){
         buttonUpdate.textContent = "Update";
         buttonUpdate.classList.add('buttonUpdate');
         buttonUpdate.setAttribute('id', 'buttonUpdate');
-        buttonUpdate.setAttribute('value', ValueButton);
         
         buttonDelete.textContent = "Delete";
         buttonDelete.setAttribute('id', 'buttonDelete');
         buttonDelete.classList.add('buttonDelete');
-        buttonDelete.setAttribute('value', ValueButton)
         
         dataRow.appendChild(buttonUpdate);
         dataRow.appendChild(buttonDelete);
