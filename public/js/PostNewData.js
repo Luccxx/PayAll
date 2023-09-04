@@ -1,4 +1,5 @@
 import DeleteDataReturn from "./DeleteData.js";
+import UpdateReturnData from "./UpdateData.js";
 
 const dataToSubmit = [];
 let VarDateNotSave = false;
@@ -94,7 +95,8 @@ function SubmitData(){
         tbody.appendChild(dataRow);
 
         DeleteDataReturn(buttonDelete, dataToSubmit, tbody);
-        
+        UpdateReturnData(buttonUpdate, dataToSubmit, tbody);
+
         this.reset();
         DateSave();
         DateNotSave(VarDateNotSave);
