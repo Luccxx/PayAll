@@ -6,6 +6,32 @@
     border: 1px solid rgb(172, 172, 172);
     border-radius: 10px;
     padding: 20px;
+    width: 67rem;
+}
+
+.class-buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.button-limpar button{
+    background: none;
+    border: none;
+    padding: 10px;
+    background-color: #706767;
+    border-radius: 10px;
+    color: rgb(255, 255, 255);
+}
+
+.button-atualizar button{
+    background: none;
+    border: none;
+    padding: 10px;
+    background-color: #3d33cc;
+    border-radius: 10px;
+    color: rgb(255, 255, 255);
 }
 
 .main-container{
@@ -65,7 +91,7 @@
     text-align: center;
 }
 
-.button-submit-enviar{
+.button-submit-enviar, .button-limpar, .button-atualizar{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -95,14 +121,6 @@
     height: 30px;
 }
 
-.button-submit-enviar input{
-    margin-top: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
 .button-container{
     margin-top: 10px;
 }
@@ -114,9 +132,7 @@
     background-color: #2629cf;
     border-radius: 20px;
     color: white;
-}
 
-#buttonUpdate{
     margin-top: 2px;
     margin-bottom: 2px;
     margin-right: 1rem;
@@ -136,5 +152,5 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between; /* Espaço entre os inputs */
-    
+    width: 65rem;
 }
