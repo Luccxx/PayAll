@@ -11,38 +11,36 @@
     <script src="/src/utils/header.js"></script>
     <main class="main-container">
         <h1 id="h2-paymentForm">Novas Despesas</h1>
-        <div class="main-container-left">
-            <form id="paymentForm">
-                <div class="container-paymentForm">
-                    <div class="input-group mb-3">
-                        <label class="input-group-text" for="inputGroupSelect01">Despesa</label>
-                        <select class="form-select" id="select" required>
-                        </select>
-                      </div>
-                    <div class="form-check form-check-reverse mb-3">
-                        <label class="form-check-label" for="flexCheckDefault">
-                          Despesa Paga?
-                        </label>
-                        <input class="form-check-input" type="checkbox" value="" id="situacao">
+            <div class="div-container-table-paymentForm">
+                <form id="paymentForm">
+                    <div class="container-paymentForm">
+                        <div class="input-group mb-3">
+                            <label class="input-group-text" for="inputGroupSelect01">Despesa</label>
+                            <select class="form-select" id="select" required>
+                            </select>
+                          </div>
+                        <div class="form-check form-check-reverse mb-3">
+                            <label class="form-check-label" for="flexCheckDefault">
+                              Despesa Paga?
+                            </label>
+                            <input class="form-check-input" type="checkbox" value="" id="situacao">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Valor</span>
+                            <input type="number" min="0" step="any" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="valor" required>
+                          </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Vencimento</span>
+                            <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="vencimento" required>
+                        </div>
+                        <div class="button-submit-enviar">
+                            <input class="" type="submit" value="Adicionar a tabela">
+                        </div>
                     </div>
-                    <div class="input-group mb-3">
-                        <span class="input-group-text" id="inputGroup-sizing-default">Valor</span>
-                        <input type="number" min="0" step="any" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="valor" required>
-                      </div>
-                    <div class="input-group mb-3">
-                        <span class="input-group-text" id="inputGroup-sizing-default">Vencimento</span>
-                        <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="vencimento" required>
-                    </div>
-                    <div class="button-submit-enviar">
-                        <input class="" type="submit" value="Adicionar a tabela">
-                    </div>
-                </div>
-            </form>
-        </div>
-
-        <div class="main-container-right">
+                </form>
+            </div>
             <div class="table-div">
-                <table class="table table-hover w-100 rounded">
+                <table class="table table-hover w-100 rounded" id="table-hover">
                     <thead>
                       <tr>
                         <th scope="col">Conta ID</th>
@@ -60,7 +58,6 @@
             <div class="button-container">
                 <button type="button" class="btn btn-success" id="enviarDados">Enviar</button>
             </div>
-        </div>
     </main>
     <div class="div-footer">
         <script src="/src/utils/footer.js"></script>

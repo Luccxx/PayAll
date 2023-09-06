@@ -12,7 +12,7 @@
     margin-top: 50px;
     
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     
@@ -43,7 +43,7 @@
 }
 
 .div-footer{
-    padding-top: 50%;
+    padding-top: 5%;
 }
 
 #h2-paymentForm{
@@ -59,6 +59,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-bottom: 2rem;
 }
 .txt-vencimento{
     text-align: center;
