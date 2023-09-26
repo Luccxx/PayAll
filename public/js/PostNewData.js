@@ -1,5 +1,6 @@
 import DeleteDataReturn from "./DeleteData.js";
 import UpdateReturnData from "./UpdateData.js";
+import ReadingIDs from "./ReadingIDs.js";
 
 const dataToSubmit = [];
 let VarDateNotSave = false;
@@ -41,18 +42,26 @@ export function FullDate(){
 function SubmitData(){
     const PayForm = document.querySelector('#paymentForm');
     const buttonUpdateArray = document.querySelector('#atualizar');
+    const select = document.getElementById('select');
     
     PayForm.addEventListener("submit", function (event) {
         event.preventDefault();
     
         const novoPagamento = {
-            "conta_id": document.getElementById('select').value,
+            "conta_id": select.value,
             "situacao": document.getElementById('situacao').checked === true ? '1' : '0',
             "valor": document.getElementById('valor').value,
             "vencimento": document.getElementById('vencimento').value,
             "data_pagamento": FullDate()//document.getElementById('data_pagamento').value
         };
-        
+
+        const ArrayParaTabela = {
+            "situacao": document.getElementById('situacao').checked === true ? '1' : '0',
+            "valor": document.getElementById('valor').value,
+            "vencimento": document.getElementById('vencimento').value,
+            "data_pagamento": FullDate()//document.getElementById('data_pagamento').value
+        };
+
         let number = 0;
         dataToSubmit.push(novoPagamento);
         
@@ -71,12 +80,12 @@ function SubmitData(){
         const buttonUpdate = document.createElement('button');
         const buttonDelete = document.createElement('button');
         const dataRow = document.createElement("tr");
-        
-        for (const key in novoPagamento) {
+        ReadingIDs(select, dataRow);
+
+        for (const key in ArrayParaTabela) {
             const dataCell = document.createElement("td");
-            dataCell.textContent = novoPagamento[key];
+            dataCell.textContent = ArrayParaTabela[key];
             dataRow.appendChild(dataCell);
-          
         }
 
         
@@ -125,7 +134,7 @@ function PostData(){
                 //window.location.href = "../../index.html";
                 alert('Despesa Criada Com Sucesso!');
                 console.log(response);
-                DateNotSave();
+                //DateNotSave();
                 return response.json();
             })    
             .then((data) => {
