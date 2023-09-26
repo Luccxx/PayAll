@@ -49,7 +49,8 @@ export default function UpdateReturnData(buttonUpdate, data, table, buttonUpdate
             }
         }
     })
-
+    //Script para atualização de dados do buttonUpdate da barra de inserir informações, não da tabela
+    /*
     buttonUpdateData.addEventListener('click', function(event) {
         console.log('clicou');
     
@@ -81,5 +82,6 @@ export default function UpdateReturnData(buttonUpdate, data, table, buttonUpdate
         console.log(dataTosubmit);
         
     });
+    */
     
 }
