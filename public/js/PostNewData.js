@@ -80,7 +80,7 @@ function SubmitData(){
         }
 
         
-        buttonUpdate.textContent = "Ver";
+        buttonUpdate.textContent = "Checar";
         buttonUpdate.classList.add('buttonUpdate');
         buttonUpdate.setAttribute('id', 'buttonUpdate');
         
