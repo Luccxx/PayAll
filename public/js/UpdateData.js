@@ -7,6 +7,9 @@ export default function UpdateReturnData(buttonUpdate, data, table, buttonUpdate
     const select = document.querySelector('#select');
     const buttonsToUpdate = document.querySelectorAll(".buttonUpdate");
 
+    const buttonsUpdateButton = document.querySelector("#atualizar");
+    buttonsUpdateButton.setAttribute("disabled", "disabled");
+
     let dataTosubmit = data;
 
     buttonUpdate.addEventListener('click', function(event){
