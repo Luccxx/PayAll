@@ -80,11 +80,11 @@ function SubmitData(){
         }
 
         
-        buttonUpdate.textContent = "Update";
+        buttonUpdate.textContent = "Ver";
         buttonUpdate.classList.add('buttonUpdate');
         buttonUpdate.setAttribute('id', 'buttonUpdate');
         
-        buttonDelete.textContent = "Delete";
+        buttonDelete.textContent = "Excluir";
         buttonDelete.setAttribute('id', 'buttonDelete');
         buttonDelete.classList.add('buttonDelete');
         
