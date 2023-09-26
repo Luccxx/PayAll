@@ -1,18 +1,26 @@
-export default function UpdateReturnData(buttonUpdate, data, table){
+import { FullDate } from "./PostNewData.js";
+
+export default function UpdateReturnData(buttonUpdate, data, table, buttonUpdateData){
+    const txt_valor = document.querySelector('#valor');
+    const txt_vencimento = document.querySelector('#vencimento');
+    const txt_checkout = document.querySelector("#situacao");
+    const select = document.querySelector('#select');
+    const buttonsToUpdate = document.querySelectorAll(".buttonUpdate");
+
     let dataTosubmit = data;
 
     buttonUpdate.addEventListener('click', function(event){
-        const txt_valor = document.querySelector('#valor');
-        const txt_vencimento = document.querySelector('#vencimento');
-        const txt_checkout = document.querySelector("#situacao");
-        const select = document.querySelector('#select');
-
-        //Definindo qual o valor da posição de cada coluna da tabela
-        const buttonsToUpdate = document.querySelectorAll(".buttonUpdate");
         buttonsToUpdate.forEach((btn, index) => {
             btn.value = index;
             //console.log(btn)
         });
+        
+        //Teste de target conteudo da tabela atualizar
+        let dataTabela = event.target;
+        if (dataTabela.classList.contains("tbody-container")) {
+               console.log(dataTabela);
+        }
+        console.log(event.target);
 
         const ValueButton = parseInt(buttonUpdate.value);
         console.log(ValueButton);
@@ -40,9 +48,38 @@ export default function UpdateReturnData(buttonUpdate, data, table){
                 break;
             }
         }
-
-        
-
-        console.log(dataTosubmit)
     })
+
+    buttonUpdateData.addEventListener('click', function(event) {
+        console.log('clicou');
+    
+        //const buttonsToUpdate = document.querySelectorAll(".buttonUpdate");
+        buttonsToUpdate.forEach((btn, index) => {
+            btn.value = index;
+            //console.log(btn)
+        });
+
+        const ValueButton = parseInt(buttonUpdate.value);
+        console.log(ValueButton);
+    
+        const listArray = {
+            conta_id: select.value,
+            situacao: txt_checkout.checked === true ? "1" : "0",
+            valor: txt_valor.value,
+            vencimento: txt_vencimento.value,
+            data_pagamento: FullDate()
+        };
+        
+    
+        const posicao = ValueButton; // A posição que você deseja substituir
+        console.log(posicao);
+    
+        // Use o método splice() corretamente
+        //remove 1 item da posição da DatatoSubmit
+        dataTosubmit.splice(posicao, 1, listArray);
+        
+        console.log(dataTosubmit);
+        
+    });
+    
 }

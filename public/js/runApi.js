@@ -1,6 +1,6 @@
 import { returnDivs } from "./returnDiv.js";
 import { ReturnPageNew } from "./returnPageNew.js";
-import { ReturnH1Mes } from "../../src/utils/month.js";
+
 
 const url = "http://localhost/api.php";
 
@@ -18,6 +18,7 @@ async function dataAPI(){
         if (path.includes("index.html")) {
             console.log(data)
             returnDivs(data);
+            
             //ReturnH1Mes(data);
         }else if(path.includes("src/pages/nova-conta.html")){
             console.log(data)

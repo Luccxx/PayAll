@@ -27,7 +27,7 @@ function DateNotSave(VarDateNotSave){
 }
 
 
-function FullDate(){
+export function FullDate(){
     const data = new Date();
     const day = data.getUTCDate();
     const month = data.getUTCMonth() + 1;
@@ -40,7 +40,7 @@ function FullDate(){
 
 function SubmitData(){
     const PayForm = document.querySelector('#paymentForm');
-    
+    const buttonUpdateArray = document.querySelector('#atualizar');
     
     PayForm.addEventListener("submit", function (event) {
         event.preventDefault();
@@ -67,7 +67,6 @@ function SubmitData(){
         */
         
         const tbody = document.getElementById("tbody-container");
-        
 
         const buttonUpdate = document.createElement('button');
         const buttonDelete = document.createElement('button');
@@ -95,7 +94,7 @@ function SubmitData(){
         tbody.appendChild(dataRow);
 
         DeleteDataReturn(buttonDelete, dataToSubmit, tbody);
-        UpdateReturnData(buttonUpdate, dataToSubmit, tbody);
+        UpdateReturnData(buttonUpdate, dataToSubmit, tbody, buttonUpdateArray);
 
         this.reset();
         DateSave();
