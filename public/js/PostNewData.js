@@ -56,7 +56,7 @@ function SubmitData(){
         };
 
         const ArrayParaTabela = {
-            "situacao": document.getElementById('situacao').checked === true ? '1' : '0',
+            "situacao": document.getElementById('situacao').checked === true ? '✅' : '❌',
             "valor": document.getElementById('valor').value,
             "vencimento": document.getElementById('vencimento').value,
             "data_pagamento": FullDate()//document.getElementById('data_pagamento').value
