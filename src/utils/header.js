@@ -23,6 +23,7 @@ document.write(`
     height: 5rem;
     background: linear-gradient(to right, RoyalBlue, blue);
     color: white;
+    
 }
 .navbar-container{
     display: flex;
