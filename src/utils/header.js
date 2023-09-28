@@ -49,6 +49,14 @@ document.write(`
 .navbar-container a:hover{
     color: lightgray;
 }
+.logo-image img {
+    transition: transform 1s;
+}
+
+.logo-image img:hover {
+    transform: scale(1.2);
+}
+
 </style>
 
 
@@ -61,7 +69,7 @@ document.write(`
     </div>-->
     <div class="navbar-container">
     <div class="navbar-box">
-        <span><a href=""><img src="../../public/assets/dinheiro.png" style="width: 50px;height="50px;""></img></a></span>
+        <span class="logo-image"><a href=""><img src="../../public/assets/dinheiro.png" style="width: 50px;height="50px;""></img></a></span>
         <span><a href="${ArrayUrls.Novo}" id="ahref">Novo</a></span>
         <span><a href="${ArrayUrls.Historico}">Histórico</a></span>
         <span><a href="">Configurações</a></span>
