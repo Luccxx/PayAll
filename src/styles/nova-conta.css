@@ -11,20 +11,41 @@
 
 .class-buttons{
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     align-items: center;
-    justify-content: space-around;
+}
+
+.button-submit-enviar input:hover, .buttonEnviarDados:hover{
+    background-color: #146c43;
+}
+
+.button-limpar button:hover{
+    background-color: #da1a1a;
+}
+
+.button-submit-enviar{
+    margin-right: 24.6rem;
 }
 
 .button-limpar button{
     background: none;
     border: none;
     padding: 10px;
-    background-color: #706767;
+    background-color: #c70909;
     border-radius: 10px;
     color: rgb(255, 255, 255);
 }
 
+.button-submit-enviar input, .buttonEnviarDados{
+    background: none;
+    border: none;
+    width: 93.7px;
+    height: 44px;
+    padding: 10px;
+    background-color: #198754;
+    border-radius: 10px;
+    color: white;
+}
 .button-atualizar button{
     background: none;
     border: none;
@@ -35,7 +56,7 @@
 }
 
 .main-container{
-    margin-top: 50px;
+    margin-top: 5rem;
     
     display: flex;
     flex-direction: column;
@@ -93,22 +114,9 @@
 
 .button-submit-enviar, .button-limpar, .button-atualizar{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-}
-
-.button-submit-enviar input{
-    background: none;
-    border: none;
-    padding: 10px;
-    background-color: #198754;
-    border-radius: 10px;
-    color: white;
-}
-
-.button-submit-enviar input:hover{
-    background-color: #146c43;
 }
 
 .label-form-select, .label-form-checkbox, .label-form-number, .label-form-date-vencimento input{

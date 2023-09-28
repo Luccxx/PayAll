@@ -8,7 +8,7 @@ export default function UpdateReturnData(buttonUpdate, data, table, buttonUpdate
     const buttonsToUpdate = document.querySelectorAll(".buttonUpdate");
 
     const buttonsUpdateButton = document.querySelector("#atualizar");
-    buttonsUpdateButton.setAttribute("disabled", "disabled");
+    //buttonsUpdateButton.setAttribute("disabled", "disabled");
 
     let dataTosubmit = data;
 
