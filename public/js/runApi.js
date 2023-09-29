@@ -1,6 +1,6 @@
 import { returnDivs } from "./returnDiv.js";
 import { ReturnPageNew } from "./returnPageNew.js";
-
+import { ReturnH1Mes } from "../../src/utils/month.js";
 
 const url = "http://localhost/api.php";
 
@@ -17,6 +17,7 @@ async function dataAPI(){
     }).then(data => {
         if (path.includes("index.html")) {
             console.log(data)
+            ReturnH1Mes(data)
             returnDivs(data);
             
             //ReturnH1Mes(data);
