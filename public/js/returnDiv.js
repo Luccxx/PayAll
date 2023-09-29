@@ -49,7 +49,7 @@ export async function returnDivs(data){
 
             for (const arg of args) {
                 const td = document.createElement('td');
-
+                td.setAttribute('class', "td-contains")
                 td.textContent = arg;
                 
                 tr.appendChild(td);
