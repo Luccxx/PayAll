@@ -15,7 +15,7 @@ async function dataAPI(){
             return response.json() //Convertendo a API em Objeto JSON()
         }
     }).then(data => {
-        if (path.includes("index.html")) {
+        if ((path.includes("Payall/")) || (path.includes("PayAll/index.html"))) {
             console.log(data)
             ReturnH1Mes(data)
             returnDivs(data);

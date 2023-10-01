@@ -1,5 +1,5 @@
 function formatURL(url) {
-    return url.startsWith('/') ? url : '/' + url;
+    return url.startsWith('/') ? url : '/PayAll/' + url;
 }
 
 const ArrayUrls = {
