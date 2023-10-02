@@ -17,7 +17,7 @@ async function dataAPI(){
     }).then(data => {
         if ((path.includes("Payall/")) || (path.includes("PayAll/index.html"))) {
             console.log(data)
-            ReturnH1Mes(data)
+            ReturnH1Mes()
             returnDivs(data);
             
             //ReturnH1Mes(data);
