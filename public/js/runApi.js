@@ -21,7 +21,7 @@ async function dataAPI(){
             returnDivs(data);
             
             //ReturnH1Mes(data);
-        }else if(path.includes("src/pages/nova-conta.html")){
+        }else if(path.includes("src/pages/nova-despesa.html")){
             console.log(data)
             ReturnPageNew(data);
         }
