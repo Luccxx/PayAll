@@ -4,8 +4,12 @@ function formatURL(url) {
 
 const ArrayUrls = {
     Historico: formatURL('index.html'),
-    Novo: formatURL('src/pages/nova-conta.html')
+    Novo: formatURL('src/pages/nova-despesa.html'),
+    Nova_Conta: formatURL('src/pages/nova-conta.html')
 }
+
+const PathMoneyIndex = "./public/assets/dinheiro.png";
+const PathAnother = "../../public/assets/dinheiro.png";
 
 document.write(`
 <style>
@@ -69,9 +73,10 @@ document.write(`
     </div>-->
     <div class="navbar-container">
     <div class="navbar-box">
-        <span class="logo-image"><a href=""><img src="./public/assets/dinheiro.png" style="width: 50px;height="50px;""></img></a></span>
+        <span class="logo-image"><a href=""><img src="${PathAnother}" style="width: 50px;height="50px;""></img></a></span>
         <span><a href="${ArrayUrls.Novo}" id="ahref">Novo</a></span>
         <span><a href="${ArrayUrls.Historico}">Histórico</a></span>
+        <span><a href="${ArrayUrls.Nova_Conta}">Nova Conta</a></span>
         <span><a href="">Configurações</a></span>
     </div>
 </div>`);
