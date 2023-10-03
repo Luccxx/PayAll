@@ -1,5 +1,6 @@
 import { returnDivs } from "./returnDiv.js";
 import { ReturnPageNew } from "./returnPageNew.js";
+import { ReturnTd } from "./ReturnTD.js";
 import { ReturnH1Mes } from "../../src/utils/month.js";
 
 const url = "http://localhost/api.php";
@@ -24,6 +25,9 @@ async function dataAPI(){
         }else if(path.includes("src/pages/nova-despesa.html")){
             console.log(data)
             ReturnPageNew(data);
+        }else if(path.includes("PayAll/src/pages/nova-conta.html")){
+            console.log(data)
+            ReturnTd(data);
         }
         
     }).catch(error => {
